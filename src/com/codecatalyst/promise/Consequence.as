@@ -155,6 +155,8 @@ package com.codecatalyst.promise
 		 */
 		private function transform( value:*, callback:Function ):void
 		{
+            resolver.resolve( optionally( callback, [ value ] ) );
+            /* I rather have a runtime error
 			try
 			{
 				resolver.resolve( optionally( callback, [ value ] ) );
@@ -163,6 +165,7 @@ package com.codecatalyst.promise
 			{
 				resolver.reject( error );
 			}
+			*/
 		}
 		
 		/**
